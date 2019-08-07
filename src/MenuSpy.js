@@ -12,9 +12,9 @@ class MenuSpy {
 
     this.elem = typeof elem === 'string' ? document.querySelector(elem) : elem;
 
-    this.links = this.elem.querySelectorAll(`a[href^="#"].${this.options.linkClass}`);
+    this.links = this.elem.querySelectorAll(`a.${this.options.linkClass}[href^="#"]`);
 
-    this.init();
+    if(this.links.length > 0) this.init();
   }
 
   init() {
@@ -36,8 +36,8 @@ class MenuSpy {
   }
 
   removeActiveClass() {
-    const { activeClass } = this.options;
-    const activeLink = this.elem.querySelector(`.${activeClass}`);
+    const { activeClass, linkClass } = this.options;
+    const activeLink = this.elem.querySelector(`.${linkClass}.${activeClass}`);
 
     if (activeLink) {
       activeLink.classList.remove(activeClass);
@@ -46,7 +46,7 @@ class MenuSpy {
 
   setActive() {
     const link = this.links[this.activeIndex];
-    const item = link.parentElement;
+    const item = link.parentElement ? link.parentElement : link;
     this.removeActiveClass();
     item.classList.add(this.options.activeClass);
   }

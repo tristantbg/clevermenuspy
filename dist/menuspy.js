@@ -44,9 +44,9 @@
 
       this.elem = typeof elem === 'string' ? document.querySelector(elem) : elem;
 
-      this.links = this.elem.querySelectorAll('a[href^="#"].' + this.options.linkClass);
+      this.links = this.elem.querySelectorAll('a.' + this.options.linkClass + '[href^="#"]');
 
-      this.init();
+      if (this.links.length > 0) this.init();
     }
 
     createClass(MenuSpy, [{
@@ -71,9 +71,11 @@
     }, {
       key: 'removeActiveClass',
       value: function removeActiveClass() {
-        var activeClass = this.options.activeClass;
+        var _options = this.options,
+            activeClass = _options.activeClass,
+            linkClass = _options.linkClass;
 
-        var activeLink = this.elem.querySelector('.' + activeClass);
+        var activeLink = this.elem.querySelector('.' + linkClass + '.' + activeClass);
 
         if (activeLink) {
           activeLink.classList.remove(activeClass);
@@ -83,7 +85,7 @@
       key: 'setActive',
       value: function setActive() {
         var link = this.links[this.activeIndex];
-        var item = link.parentElement;
+        var item = link.parentElement ? link.parentElement : link;
         this.removeActiveClass();
         item.classList.add(this.options.activeClass);
       }

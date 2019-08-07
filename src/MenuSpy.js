@@ -3,7 +3,7 @@ class MenuSpy {
 
     const defaults = {
       activeClass: 'active',
-      linkClass: 'section'
+      linkClass: 'section-link'
     };
 
     this.options = Object.assign({}, defaults, config);
@@ -12,7 +12,7 @@ class MenuSpy {
 
     this.elem = typeof elem === 'string' ? document.querySelector(elem) : elem;
 
-    this.links = this.elem.querySelectorAll(`a.${this.options.linkClass}[href^="#"]`);
+    this.links = this.elem.querySelectorAll(`.${this.options.linkClass} a[href^="#"]`);
 
     if(this.links.length > 0) this.init();
   }

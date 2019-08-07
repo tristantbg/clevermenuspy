@@ -1,6 +1,6 @@
 {
   "name": "clevermenuspy",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "IntersectionObserver MenuSpy",
   "main": "dist/menuspy.js",
   "scripts": {

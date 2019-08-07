@@ -62,7 +62,7 @@
           var selector = link.getAttribute('href');
           var el = document.querySelector(selector);
 
-          observer.observe(el);
+          if (el) observer.observe(el);
         });
 
         this.setActive();

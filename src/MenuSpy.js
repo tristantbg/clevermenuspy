@@ -28,7 +28,7 @@ class MenuSpy {
       const selector = link.getAttribute('href');
       const el = document.querySelector(selector);
 
-      observer.observe(el);
+      if(el) observer.observe(el);
     });
 
     this.setActive()

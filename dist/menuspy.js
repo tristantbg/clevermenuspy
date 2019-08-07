@@ -44,7 +44,7 @@
 
       this.elem = typeof elem === 'string' ? document.querySelector(elem) : elem;
 
-      this.links = this.elem.querySelectorAll('a[href^="#"].' + linkClass);
+      this.links = this.elem.querySelectorAll('a[href^="#"].' + this.options.linkClass);
 
       this.init();
     }

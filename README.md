@@ -3,7 +3,7 @@
 ```javascript
 window.onload = function () {
 
-    const MenuSpy = new MenuSpy('header', {activeClass: 'active'});
+    const MenuSpy = new MenuSpy('header', {activeClass: 'active', linkClass: 'section'});
 };
 
 ```

@@ -34,7 +34,8 @@
 
 
       var defaults = {
-        activeClass: 'active'
+        activeClass: 'active',
+        linkClass: 'section'
       };
 
       this.options = Object.assign({}, defaults, config);
@@ -43,7 +44,7 @@
 
       this.elem = typeof elem === 'string' ? document.querySelector(elem) : elem;
 
-      this.links = this.elem.querySelectorAll('a[href^="#"]');
+      this.links = this.elem.querySelectorAll('a[href^="#"].' + linkClass);
 
       this.init();
     }

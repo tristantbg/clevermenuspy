@@ -1,0 +1,37 @@
+{
+  "name": "clevermenuspy",
+  "version": "1.0",
+  "description": "IntersectionObserver MenuSpy",
+  "main": "dist/menuspy.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rollup -c"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tristantbg/clevermenuspy.git"
+  },
+  "keywords": [
+    "vanilla",
+    "menu",
+    "spy",
+    "intersection",
+    "observer"
+  ],
+  "author": "Tristan Bagot",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tristantbg/clevermenuspy/issues"
+  },
+  "homepage": "https://github.com/tristantbg/clevermenuspy#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-preset-env": "^1.6.1",
+    "rollup-plugin-babel": "^3.0.2",
+    "rollup-plugin-uglify": "^2.0.1"
+  },
+  "dependencies": {
+    "rollup": "^1.19.4"
+  }
+}

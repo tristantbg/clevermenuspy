@@ -1,6 +1,7 @@
 .DS_Store
 .idea/*
 package-lock.json
+yarn.lock
 node_modules
 _site
 Gemfile.lock
